@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZANASO Tours & Safaris</title>
+    <meta
+      name="description"
+      content="Discover Zanzibar. Experience Africa. Tours, safaris, beach escapes, island adventures and airport transfers."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">
+          <img id="siteLogo" alt="ZANASO Logo" class="brand-logo" />
+          <span id="brandName">ZANASO</span>
+        </div>
+        <div class="top-actions">
+          <a class="btn btn-secondary" href="#experiences">Explore Tours</a>
+          <a class="btn btn-primary" href="#booking">Book Your Adventure</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="heroSection">
+        <div class="container">
+          <div class="hero-inner">
+            <div class="eyebrow" id="heroEyebrow">Discover Zanzibar</div>
+            <h1 id="heroTitle">Welcome to ZANASO</h1>
+            <p id="heroDescription">
+              Your Zanzibar Adventure Starts Here. From Stone Town to turquoise waters,
+              tropical beaches and unforgettable wildlife safaris, we create journeys
+              designed to make your holiday special.
+            </p>
+            <div class="hero-actions">
+              <a href="#experiences" class="btn btn-primary" id="heroPrimaryBtn">Explore Tours</a>
+              <a href="#booking" class="btn btn-secondary" id="heroSecondaryBtn">Book Your Adventure</a>
+            </div>
+
+            <div class="stats-row">
+              <div class="stat-box">
+                <strong>100%</strong>
+                <span>Tailor-made experiences</span>
+              </div>
+              <div class="stat-box">
+                <strong>24/7</strong>
+                <span>Friendly support</span>
+              </div>
+              <div class="stat-box">
+                <strong>5★</strong>
+                <span>Guest satisfaction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experiences">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Explore Our Experiences</h2>
+            <p>
+              We combine local knowledge, personal service and unforgettable moments
+              to help you discover the beauty of Zanzibar and Tanzania.
+            </p>
+          </div>
+
+          <div class="feature-grid" id="featuresGrid"></div>
+        </div>
+      </section>
+
+      <section class="section tours">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Popular Zanzibar Tours</h2>
+          </div>
+
+          <div class="tour-grid" id="toursGrid"></div>
+        </div>
+      </section>
+
+      <section class="section why">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Why Choose ZANASO?</h2>
+          </div>
+
+          <div class="why-grid" id="whyGrid"></div>
+        </div>
+      </section>
+
+      <section class="cta-banner">
+        <div class="container">
+          <div class="cta-inner">
+            <div>
+              <h2>Discover Zanzibar With Us</h2>
+              <p>Beautiful Places. Real Experiences. Amazing Memories.</p>
+            </div>
+            <a href="#booking" class="btn btn-primary">Start Your Journey</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials">
+        <div class="container">
+          <div class="section-heading">
+            <h2>What Our Guests Say</h2>
+          </div>
+
+          <div class="testimonial-grid" id="testimonialsGrid"></div>
+        </div>
+      </section>
+
+      <section class="section booking" id="booking">
+        <div class="container booking-wrap">
+          <div class="booking-copy">
+            <h3 id="bookingTitle">Book Your Zanzibar Adventure</h3>
+            <p id="bookingDescription">
+              Tell us what you would like to experience and our team will help you
+              plan the perfect trip.
+            </p>
+
+            <ul id="bookingList">
+              <li>Excursions and island tours</li>
+              <li>Safari trips and wildlife experiences</li>
+              <li>Airport and hotel transfers</li>
+              <li>Private tours and custom itineraries</li>
+            </ul>
+          </div>
+
+          <form class="booking-form" id="bookingForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input id="name" type="text" placeholder="Enter your name" />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Enter your email" />
+              </div>
+
+              <div class="field">
+                <label for="phone">WhatsApp / Phone</label>
+                <input id="phone" type="tel" placeholder="Enter your phone number" />
+              </div>
+
+              <div class="field">
+                <label for="experience">Select Experience</label>
+                <select id="experience"></select>
+              </div>
+
+              <div class="field">
+                <label for="date">Preferred Date</label>
+                <input id="date" type="date" />
+              </div>
+
+              <div class="field">
+                <label for="guests">Number of Guests</label>
+                <input id="guests" type="number" placeholder="Number" />
+              </div>
+
+              <div class="field full">
+                <label for="message">Message / Special Request</label>
+                <textarea id="message" placeholder="Tell us what you would like"></textarea>
+              </div>
+            </div>
+
+            <button class="btn btn-primary submit-btn" type="submit">Send Booking Request</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <h3 id="footerBrand">ZANASO</h3>
+            <p class="muted">
+              Discover Zanzibar. Experience Africa. Tours, safaris, excursions and
+              unforgettable island adventures.
+            </p>
+          </div>
+
+          <div class="footer-info">
+            <div id="footerLocation">📍 Zanzibar, Tanzania</div>
+            <div id="footerWhatsApp">📱 WhatsApp: +255 XXX XXX XXX</div>
+            <div id="footerEmail">📧 Email: info@zan...com</div>
+            <div id="footerWebsite">🌐 Website: www.zanaso.com</div>
+          </div>
+
+          <div class="footer-links" id="socialLinks"></div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="muted">© 2026 ZANASO Tours & Safaris. All rights reserved.</div>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

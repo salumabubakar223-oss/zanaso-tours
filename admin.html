@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZANASO Admin Portal</title>
+    <meta name="description" content="Admin portal for ZANASO Tours & Safaris" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .admin-shell {
+        padding: 48px 0 80px;
+        background: linear-gradient(180deg, #edf8fa 0%, #ffffff 100%);
+      }
+
+      .admin-card {
+        background: #fff;
+        border: 1px solid #dfeaf1;
+        border-radius: 28px;
+        box-shadow: 0 18px 50px rgba(18, 52, 63, 0.08);
+        overflow: hidden;
+      }
+
+      .admin-header {
+        background: linear-gradient(135deg, #0d5168 0%, #0b3d4e 100%);
+        color: #fff;
+        padding: 26px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .admin-header h1 {
+        margin: 0;
+        font-size: clamp(1.7rem, 3vw, 2.5rem);
+      }
+
+      .admin-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .admin-content {
+        padding: 32px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      .admin-section {
+        border: 1px solid #e3edf2;
+        border-radius: 20px;
+        background: #fafcff;
+        padding: 22px;
+      }
+
+      .admin-section h2 {
+        margin-top: 0;
+        margin-bottom: 18px;
+        font-size: 1.25rem;
+        color: #123746;
+      }
+
+      .admin-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      .field input,
+      .field textarea,
+      .field select {
+        border: 1px solid #d8e4eb;
+        border-radius: 12px;
+        padding: 12px 14px;
+        background: #fff;
+        font: inherit;
+      }
+
+      .field textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+
+      .mini-note {
+        color: #53707c;
+        font-size: 0.86rem;
+      }
+
+      .tour-editor,
+      .feature-editor,
+      .why-editor,
+      .testimonial-editor {
+        display: grid;
+        gap: 16px;
+      }
+
+      .editor-item {
+        border: 1px solid #e2ecf2;
+        border-radius: 16px;
+        padding: 16px;
+        background: #fff;
+      }
+
+      .editor-item h3 {
+        margin: 0 0 12px;
+        font-size: 1.05rem;
+      }
+
+      .admin-footer {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 32px 32px;
+      }
+
+      @media (max-width: 980px) {
+        .admin-content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .admin-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .admin-content,
+        .admin-footer {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin-shell">
+      <div class="container admin-card">
+        <div class="admin-header">
+          <h1>ZANASO Admin Portal</h1>
+          <div class="admin-actions">
+            <a class="btn btn-secondary" href="index.html">View Website</a>
+            <button class="btn btn-primary" id="saveButton" type="button">Save Changes</button>
+          </div>
+        </div>
+
+        <div class="admin-content">
+          <section class="admin-section">
+            <h2>Website Settings</h2>
+
+            <div class="admin-grid">
+              <div class="field">
+                <label for="brandNameInput">Brand Name</label>
+                <input id="brandNameInput" type="text" />
+              </div>
+
+              <div class="field">
+                <label for="logoUrlInput">Logo URL</label>
+                <input id="logoUrlInput" type="url" placeholder="https://..." />
+              </div>
+
+              <div class="field full">
+                <label for="heroImageInput">Hero Background URL</label>
+                <input id="heroImageInput" type="url" placeholder="https://..." />
+              </div>
+            </div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Hero Section</h2>
+            <div class="admin-grid">
+              <div class="field">
+                <label for="heroEyebrowInput">Eyebrow</label>
+                <input id="heroEyebrowInput" type="text" />
+              </div>
+
+              <div class="field">
+                <label for="heroTitleInput">Main Heading</label>
+                <input id="heroTitleInput" type="text" />
+              </div>
+
+              <div class="field full">
+                <label for="heroDescriptionInput">Hero Text</label>
+                <textarea id="heroDescriptionInput"></textarea>
+              </div>
+
+              <div class="field">
+                <label for="heroPrimaryBtnInput">Primary Button</label>
+                <input id="heroPrimaryBtnInput" type="text" />
+              </div>
+
+              <div class="field">
+                <label for="heroSecondaryBtnInput">Secondary Button</label>
+                <input id="heroSecondaryBtnInput" type="text" />
+              </div>
+            </div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Experience Cards</h2>
+            <div class="feature-editor" id="featureEditor"></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Tour Listings</h2>
+            <div class="tour-editor" id="tourEditor"></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Why Choose Us</h2>
+            <div class="why-editor" id="whyEditor"></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Testimonials</h2>
+            <div class="testimonial-editor" id="testimonialEditor"></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Contact & Footer</h2>
+            <div class="admin-grid">
+              <div class="field">
+                <label for="locationInput">Location</label>
+                <input id="locationInput" type="text" />
+              </div>
+
+              <div class="field">
+                <label for="phoneInput">WhatsApp / Phone</label>
+                <input id="phoneInput" type="text" />
+              </div>
+
+              <div class="field">
+                <label for="emailInput">Email</label>
+                <input id="emailInput" type="email" />
+              </div>
+
+              <div class="field">
+                <label for="websiteInput">Website</label>
+                <input id="websiteInput" type="text" />
+              </div>
+
+              <div class="field">
+                <label for="instagramInput">Instagram</label>
+                <input id="instagramInput" type="text" />
+              </div>
+
+              <div class="field">
+                <label for="facebookInput">Facebook</label>
+                <input id="facebookInput" type="text" />
+              </div>
+
+              <div class="field">
+                <label for="tiktokInput">TikTok</label>
+                <input id="tiktokInput" type="text" />
+              </div>
+
+              <div class="field">
+                <label for="youtubeInput">YouTube</label>
+                <input id="youtubeInput" type="text" />
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="admin-footer">
+          <button class="btn btn-primary" id="resetButton" type="button">Reset Demo Data</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
